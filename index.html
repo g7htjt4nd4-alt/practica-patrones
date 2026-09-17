@@ -78,10 +78,65 @@
     </div>
   </section>
 
+  <section id="tab-velocidad" class="tab-panel" hidden>
+    <div class="fase-subheader">
+      <h2>Modo velocidad</h2>
+      <span id="f4-progreso-ronda">Lista para empezar</span>
+    </div>
+    <div class="main">
+      <div id="f4-inicio" class="resumen">
+        <p>15 preguntas mezclando Velas, Canales y Estrategias, contra el reloj.</p>
+        <button id="f4-btn-empezar" class="btn btn-primario" disabled>Cargando datos…</button>
+      </div>
+
+      <div id="f4-juego" hidden>
+        <div class="cronometro">
+          <div class="cronometro-track"><div id="f4-cronometro-barra" class="cronometro-barra"></div></div>
+          <span id="f4-cronometro-texto" class="cronometro-texto"></span>
+        </div>
+
+        <div id="f4-chart" class="chart"></div>
+
+        <div id="f4-fase3-area" hidden>
+          <p id="f4-contexto" class="contexto"></p>
+          <div id="f4-vela" class="vela-gatillo"></div>
+          <div id="f4-volumen" class="volumen" hidden>
+            <div class="volumen-barra">
+              <span class="volumen-label">Actual</span>
+              <div class="volumen-track"><div id="f4-volumen-actual" class="volumen-fill"></div></div>
+            </div>
+            <div class="volumen-barra">
+              <span class="volumen-label">Umbral</span>
+              <div class="volumen-track"><div id="f4-volumen-umbral" class="volumen-fill volumen-fill-umbral"></div></div>
+            </div>
+            <p id="f4-volumen-texto" class="volumen-texto"></p>
+          </div>
+        </div>
+
+        <p class="pregunta">¿Qué corresponde?</p>
+        <div id="f4-opciones" class="opciones"></div>
+
+        <div id="f4-resultado" class="resultado" hidden>
+          <p id="f4-resultado-texto" class="resultado-texto"></p>
+          <p id="f4-explicacion" class="explicacion"></p>
+        </div>
+      </div>
+
+      <div id="f4-resumen" class="resumen" hidden>
+        <h3>Ronda terminada</h3>
+        <p id="f4-resumen-aciertos"></p>
+        <p id="f4-resumen-promedio"></p>
+        <p id="f4-resumen-debil"></p>
+        <button id="f4-btn-otra-ronda" class="btn btn-primario">Jugar otra ronda</button>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
   <script src="shared.js"></script>
   <script src="app.js"></script>
   <script src="fase2.js"></script>
   <script src="fase3.js"></script>
+  <script src="fase4.js"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@
     resultadoEl.hidden = true;
   }
 
-  function dibujarEjemplo(ejemplo) {
+  function dibujarEnGrafico(graficoDestino, ejemplo) {
     const datos = S.velasATiempo(ejemplo.velas);
 
     const idxObjetivo = ejemplo.vela_objetivo_idx;
@@ -57,8 +57,8 @@
       borderColor: S.COLOR_DESTACADO,
     };
 
-    serie.setData(datos);
-    serie.setMarkers([
+    graficoDestino.serie.setData(datos);
+    graficoDestino.serie.setMarkers([
       {
         time: datos[idxObjetivo].time,
         position: 'aboveBar',
@@ -67,7 +67,11 @@
         text: 'Vela a identificar',
       },
     ]);
-    chart.timeScale().fitContent();
+    graficoDestino.chart.timeScale().fitContent();
+  }
+
+  function dibujarEjemplo(ejemplo) {
+    dibujarEnGrafico(grafico, ejemplo);
   }
 
   function renderOpciones(ejemplo) {
@@ -127,4 +131,10 @@
       chartContainer.textContent = 'No se pudieron cargar los datos. Revisa que estés usando un servidor local (ver README).';
       console.error('Error cargando patterns_fase1.json:', err);
     });
+
+  window.Fase1 = {
+    ETIQUETAS,
+    dibujarEnGrafico,
+    obtenerEjemplos: () => ejemplos,
+  };
 })();

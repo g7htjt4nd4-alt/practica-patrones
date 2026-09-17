@@ -208,3 +208,60 @@ body {
   font-size: 0.85rem;
   color: #b8bfd1;
 }
+
+.cronometro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cronometro-track {
+  flex: 1;
+  height: 10px;
+  background: #1e2538;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cronometro-barra {
+  height: 100%;
+  width: 100%;
+  background: #2f6fed;
+  border-radius: 5px;
+  transition: width 0.1s linear, background-color 0.2s;
+}
+
+.cronometro-barra.urgente {
+  background: #e5534b;
+}
+
+.cronometro-texto {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  width: 2.5em;
+  text-align: right;
+}
+
+.resumen {
+  text-align: center;
+  padding: 24px 16px;
+  background: #161c2c;
+  border: 1px solid #262f47;
+  border-radius: 8px;
+}
+
+.resumen h3 {
+  margin-top: 0;
+}
+
+.resumen p {
+  margin: 6px 0;
+  color: #d5d9e6;
+}
+
+.resumen .btn-primario {
+  width: auto;
+  padding: 12px 24px;
+  margin-top: 12px;
+}

@@ -56,31 +56,35 @@
     return { valorInicio, valorFinal };
   }
 
-  function dibujarEjemplo(ejemplo) {
+  // Dibuja velas + línea de canal (si aplica) sobre `graficoDestino`.
+  // `lineaSerieActual` es la serie de línea previamente creada en ESE
+  // gráfico (o null); devuelve la nueva serie de línea (o null) para que
+  // el caller la recuerde y la pase de vuelta la próxima vez.
+  function dibujarEnGrafico(graficoDestino, ejemplo, lineaSerieActual) {
     const datos = S.velasATiempo(ejemplo.velas);
-    grafico.serie.setData(datos);
+    graficoDestino.serie.setData(datos);
 
-    if (lineaSerie) {
-      grafico.chart.removeSeries(lineaSerie);
-      lineaSerie = null;
+    if (lineaSerieActual) {
+      graficoDestino.chart.removeSeries(lineaSerieActual);
+      lineaSerieActual = null;
     }
 
     if (ejemplo.linea) {
       const { valorInicio, valorFinal } = calcularLineaExtendida(ejemplo);
-      lineaSerie = grafico.chart.addLineSeries({
+      lineaSerieActual = graficoDestino.chart.addLineSeries({
         color: S.COLOR_DESTACADO,
         lineWidth: 2,
         crosshairMarkerVisible: false,
         lastValueVisible: false,
         priceLineVisible: false,
       });
-      lineaSerie.setData([
+      lineaSerieActual.setData([
         { time: datos[0].time, value: valorInicio },
         { time: datos[datos.length - 1].time, value: valorFinal },
       ]);
 
       const posicionMarcador = ejemplo.linea.tipo === 'alcista' ? 'belowBar' : 'aboveBar';
-      grafico.serie.setMarkers(
+      graficoDestino.serie.setMarkers(
         ejemplo.indices_toque.map((idx) => ({
           time: datos[idx].time,
           position: posicionMarcador,
@@ -89,10 +93,15 @@
         }))
       );
     } else {
-      grafico.serie.setMarkers([]);
+      graficoDestino.serie.setMarkers([]);
     }
 
-    grafico.chart.timeScale().fitContent();
+    graficoDestino.chart.timeScale().fitContent();
+    return lineaSerieActual;
+  }
+
+  function dibujarEjemplo(ejemplo) {
+    lineaSerie = dibujarEnGrafico(grafico, ejemplo, lineaSerie);
   }
 
   function renderOpciones(ejemplo) {
@@ -162,5 +171,10 @@
     grafico.chart.timeScale().fitContent();
   }
 
-  window.Fase2 = { activar };
+  window.Fase2 = {
+    activar,
+    ETIQUETAS,
+    dibujarEnGrafico,
+    obtenerEjemplos: () => ejemplos,
+  };
 })();

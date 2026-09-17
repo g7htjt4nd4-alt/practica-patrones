@@ -50,20 +50,29 @@
     resultadoEl.hidden = true;
   }
 
-  function dibujarEjemplo(ejemplo) {
-    contextoEl.textContent = ejemplo.contexto;
-    S.dibujarVelaSVG(velaEl, ejemplo.vela_gatillo);
+  // Dibuja contexto + vela gatillo + volumen sobre un juego de elementos
+  // del DOM (reutilizado tal cual por Fase 4 - modo velocidad).
+  function dibujarEnElementos(el, ejemplo) {
+    if (el.contextoEl) el.contextoEl.textContent = ejemplo.contexto;
+    S.dibujarVelaSVG(el.velaEl, ejemplo.vela_gatillo);
 
     if (ejemplo.volumen) {
       const { actual_pct_avg, umbral_pct_avg } = ejemplo.volumen;
       const maxRef = Math.max(actual_pct_avg, umbral_pct_avg) * 1.2;
-      volumenActualEl.style.width = `${(actual_pct_avg / maxRef) * 100}%`;
-      volumenUmbralEl.style.width = `${(umbral_pct_avg / maxRef) * 100}%`;
-      volumenTextoEl.textContent = `Volumen: ${actual_pct_avg}% del promedio (umbral: ${umbral_pct_avg}%)`;
-      volumenEl.hidden = false;
+      el.volumenActualEl.style.width = `${(actual_pct_avg / maxRef) * 100}%`;
+      el.volumenUmbralEl.style.width = `${(umbral_pct_avg / maxRef) * 100}%`;
+      el.volumenTextoEl.textContent = `Volumen: ${actual_pct_avg}% del promedio (umbral: ${umbral_pct_avg}%)`;
+      el.volumenEl.hidden = false;
     } else {
-      volumenEl.hidden = true;
+      el.volumenEl.hidden = true;
     }
+  }
+
+  function dibujarEjemplo(ejemplo) {
+    dibujarEnElementos(
+      { contextoEl, velaEl, volumenEl, volumenActualEl, volumenUmbralEl, volumenTextoEl },
+      ejemplo
+    );
   }
 
   function renderOpciones(ejemplo) {
@@ -129,5 +138,10 @@
     }
   }
 
-  window.Fase3 = { activar };
+  window.Fase3 = {
+    activar,
+    ETIQUETAS,
+    dibujarEnElementos,
+    obtenerEjemplos: () => ejemplos,
+  };
 })();
