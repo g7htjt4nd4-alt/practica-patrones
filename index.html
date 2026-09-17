@@ -30,7 +30,27 @@
     </div>
   </main>
 
+  <section id="tab-canales" class="tab-panel" hidden>
+    <div class="fase-subheader">
+      <h2>Canales y rupturas</h2>
+      <span id="f2-stats">Aciertos: 0 / 0</span>
+      <button id="f2-btn-reset" class="btn btn-secundario">Reiniciar progreso</button>
+    </div>
+    <div class="main">
+      <div id="f2-chart" class="chart"></div>
+      <p class="pregunta">¿Qué tipo de canal es este?</p>
+      <div id="f2-opciones" class="opciones"></div>
+      <div id="f2-resultado" class="resultado" hidden>
+        <p id="f2-resultado-texto" class="resultado-texto"></p>
+        <p id="f2-explicacion" class="explicacion"></p>
+        <button id="f2-btn-siguiente" class="btn btn-primario">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="shared.js"></script>
   <script src="app.js"></script>
+  <script src="fase2.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+  const S = window.PatronesShared;
   const STORAGE_KEY = 'practica-patrones-progreso';
   const DATA_URL = 'data/patterns_fase1.json';
 
@@ -26,68 +27,19 @@
   let mazo = [];
   let ejemplos = [];
   let actual = null;
-  let progreso = cargarProgreso();
+  let progreso = S.cargarProgreso(STORAGE_KEY);
 
-  const chart = LightweightCharts.createChart(chartContainer, {
-    layout: {
-      background: { color: '#161c2c' },
-      textColor: '#b8bfd1',
-    },
-    grid: {
-      vertLines: { color: '#1f2740' },
-      horzLines: { color: '#1f2740' },
-    },
-    rightPriceScale: { borderColor: '#2d3650' },
-    timeScale: { borderColor: '#2d3650' },
-  });
-
-  const serie = chart.addCandlestickSeries({
-    upColor: '#2f9e5f',
-    downColor: '#e5534b',
-    borderUpColor: '#2f9e5f',
-    borderDownColor: '#e5534b',
-    wickUpColor: '#2f9e5f',
-    wickDownColor: '#e5534b',
-  });
-
-  function ajustarTamano() {
-    chart.applyOptions({ width: chartContainer.clientWidth, height: chartContainer.clientHeight });
-  }
-  window.addEventListener('resize', ajustarTamano);
-  ajustarTamano();
-
-  function cargarProgreso() {
-    try {
-      const guardado = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (guardado && typeof guardado.aciertos === 'number') {
-        return guardado;
-      }
-    } catch (e) {
-      /* localStorage vacío o corrupto: se ignora y se parte de cero */
-    }
-    return { aciertos: 0, intentos: 0, porPatron: {} };
-  }
-
-  function guardarProgreso() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progreso));
-  }
+  const grafico = S.crearGraficoVelas(chartContainer);
+  const chart = grafico.chart;
+  const serie = grafico.serie;
 
   function renderStats() {
     statsEl.textContent = `Aciertos: ${progreso.aciertos} / ${progreso.intentos}`;
   }
 
-  function barajar(arr) {
-    const copia = arr.slice();
-    for (let i = copia.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copia[i], copia[j]] = [copia[j], copia[i]];
-    }
-    return copia;
-  }
-
   function siguienteEjemplo() {
     if (mazo.length === 0) {
-      mazo = barajar(ejemplos.map((_, idx) => idx));
+      mazo = S.barajar(ejemplos.map((_, idx) => idx));
     }
     const idx = mazo.pop();
     actual = ejemplos[idx];
@@ -97,19 +49,12 @@
   }
 
   function dibujarEjemplo(ejemplo) {
-    const baseTime = 1700000000;
-    const datos = ejemplo.velas.map((vela, i) => ({
-      time: baseTime + i * 86400,
-      open: vela.o,
-      high: vela.h,
-      low: vela.l,
-      close: vela.c,
-    }));
+    const datos = S.velasATiempo(ejemplo.velas);
 
     const idxObjetivo = ejemplo.vela_objetivo_idx;
     datos[idxObjetivo] = {
       ...datos[idxObjetivo],
-      borderColor: '#f5c542',
+      borderColor: S.COLOR_DESTACADO,
     };
 
     serie.setData(datos);
@@ -117,7 +62,7 @@
       {
         time: datos[idxObjetivo].time,
         position: 'aboveBar',
-        color: '#f5c542',
+        color: S.COLOR_DESTACADO,
         shape: 'arrowDown',
         text: 'Vela a identificar',
       },
@@ -151,26 +96,14 @@
       }
     });
 
-    registrarIntento(correcta, esCorrecto);
+    S.registrarIntento(progreso, correcta, esCorrecto);
+    S.guardarProgreso(STORAGE_KEY, progreso);
+    renderStats();
 
     resultadoTextoEl.textContent = esCorrecto ? '¡Correcto!' : `Incorrecto. Era: ${ETIQUETAS[correcta] || correcta}`;
     resultadoTextoEl.className = `resultado-texto ${esCorrecto ? 'correcta' : 'incorrecta'}`;
     explicacionEl.textContent = actual.explicacion;
     resultadoEl.hidden = false;
-  }
-
-  function registrarIntento(patron, esCorrecto) {
-    progreso.intentos += 1;
-    if (esCorrecto) progreso.aciertos += 1;
-
-    if (!progreso.porPatron[patron]) {
-      progreso.porPatron[patron] = { aciertos: 0, intentos: 0 };
-    }
-    progreso.porPatron[patron].intentos += 1;
-    if (esCorrecto) progreso.porPatron[patron].aciertos += 1;
-
-    guardarProgreso();
-    renderStats();
   }
 
   btnSiguiente.addEventListener('click', siguienteEjemplo);
