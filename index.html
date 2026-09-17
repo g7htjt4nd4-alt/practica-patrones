@@ -15,6 +15,7 @@
       <button type="button" class="tab-btn" data-tab="canales">Canales</button>
       <button type="button" class="tab-btn" data-tab="estrategias">Estrategias</button>
       <button type="button" class="tab-btn" data-tab="velocidad">Velocidad</button>
+      <button type="button" class="tab-btn" data-tab="glosario">Glosario</button>
     </nav>
   </header>
 
@@ -34,7 +35,10 @@
       <div id="resultado" class="resultado" hidden>
         <p id="resultado-texto" class="resultado-texto"></p>
         <p id="explicacion" class="explicacion"></p>
-        <button id="btn-siguiente" class="btn btn-primario">Siguiente</button>
+        <div class="resultado-acciones">
+          <button id="btn-ver-referencia" class="btn btn-secundario">Ver imagen de referencia</button>
+          <button id="btn-siguiente" class="btn btn-primario">Siguiente</button>
+        </div>
       </div>
     </div>
   </section>
@@ -141,8 +145,27 @@
     </div>
   </section>
 
+  <section id="tab-glosario" class="tab-panel" hidden>
+    <div class="fase-subheader">
+      <h2>Glosario</h2>
+    </div>
+    <div class="main">
+      <div id="glosario-lista" class="glosario-grid"></div>
+    </div>
+  </section>
+
+  <div id="modal-referencia" class="modal-overlay" hidden>
+    <div class="modal-caja">
+      <button id="modal-cerrar" class="modal-cerrar" type="button" aria-label="Cerrar">×</button>
+      <img id="modal-imagen" class="modal-imagen" src="" alt="" />
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-definicion"></p>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
   <script src="shared.js"></script>
+  <script src="glosario.js"></script>
   <script src="app.js"></script>
   <script src="fase2.js"></script>
   <script src="fase3.js"></script>

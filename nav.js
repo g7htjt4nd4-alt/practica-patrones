@@ -9,12 +9,14 @@
     canales: document.getElementById('tab-canales'),
     estrategias: document.getElementById('tab-estrategias'),
     velocidad: document.getElementById('tab-velocidad'),
+    glosario: document.getElementById('tab-glosario'),
   };
   const activadores = {
     velas: () => window.Fase1.activar(),
     canales: () => window.Fase2.activar(),
     estrategias: () => window.Fase3.activar(),
     velocidad: () => window.Fase4.activar(),
+    glosario: () => window.Glosario.activar(),
   };
 
   function mostrarTab(nombre) {

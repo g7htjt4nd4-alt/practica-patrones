@@ -1,0 +1,44 @@
+[
+  {
+    "patron": "martillo",
+    "archivo": "martillo.png",
+    "titulo": "Martillo (Hammer)",
+    "definicion": "Mechón largo abajo, cuerpo pequeño arriba, poca o ninguna mecha superior: los vendedores dominaban pero los compradores retomaron el control antes del cierre. Más significativo tras una caída."
+  },
+  {
+    "patron": "gancho",
+    "archivo": "gancho.png",
+    "titulo": "Gancho (Estrella fugaz)",
+    "definicion": "Mechón largo arriba, cuerpo pequeño abajo: los compradores intentaron subir el precio pero fallaron en sostenerlo. Más significativo tras una subida."
+  },
+  {
+    "patron": "marubozu",
+    "archivo": "marubozu.png",
+    "titulo": "Marubozu (Vela llena)",
+    "definicion": "Cuerpo grande, casi sin mechas: dominio absoluto de una dirección durante todo el período."
+  },
+  {
+    "patron": "doji",
+    "archivo": "doji.png",
+    "titulo": "Doji",
+    "definicion": "Apertura y cierre casi idénticos: equilibrio total entre compradores y vendedores, máxima incertidumbre."
+  },
+  {
+    "patron": "envolvente_alcista",
+    "archivo": "envolvente_alcista.png",
+    "titulo": "Envolvente alcista",
+    "definicion": "El cuerpo de la vela verde envuelve por completo el cuerpo de la vela roja anterior: señal fuerte de reversión al alza."
+  },
+  {
+    "patron": "envolvente_bajista",
+    "archivo": "envolvente_bajista.png",
+    "titulo": "Envolvente bajista",
+    "definicion": "El cuerpo de la vela roja envuelve por completo el cuerpo de la vela verde anterior: señal fuerte de reversión a la baja."
+  },
+  {
+    "patron": "ninguno",
+    "archivo": "ninguno.png",
+    "titulo": "Ninguno (vela normal)",
+    "definicion": "Vela normal sin ningún patrón especial: cuerpo y mechas moderados, sin dominio claro de ninguna de las partes."
+  }
+]

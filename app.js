@@ -23,6 +23,7 @@
   const resultadoTextoEl = document.getElementById('resultado-texto');
   const explicacionEl = document.getElementById('explicacion');
   const btnSiguiente = document.getElementById('btn-siguiente');
+  const btnVerReferencia = document.getElementById('btn-ver-referencia');
 
   let mazo = [];
   let ejemplos = [];
@@ -111,6 +112,10 @@
   }
 
   btnSiguiente.addEventListener('click', siguienteEjemplo);
+
+  btnVerReferencia.addEventListener('click', () => {
+    window.Glosario.mostrarModal(actual.patron_correcto);
+  });
 
   btnReset.addEventListener('click', () => {
     const confirmado = window.confirm('¿Reiniciar todo el progreso guardado? Esta acción no se puede deshacer.');
