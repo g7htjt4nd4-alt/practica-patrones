@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:," />
+  <title>Práctica de patrones de velas japonesas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Práctica de patrones de velas japonesas</h1>
+    <div class="stats">
+      <span id="stats-aciertos">Aciertos: 0 / 0</span>
+      <button id="btn-reset" class="btn btn-secundario">Reiniciar progreso</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="chart" class="chart"></div>
+
+    <p class="pregunta">¿Qué patrón forma la vela resaltada?</p>
+
+    <div id="opciones" class="opciones"></div>
+
+    <div id="resultado" class="resultado" hidden>
+      <p id="resultado-texto" class="resultado-texto"></p>
+      <p id="explicacion" class="explicacion"></p>
+      <button id="btn-siguiente" class="btn btn-primario">Siguiente</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

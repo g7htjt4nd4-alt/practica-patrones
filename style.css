@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #0f1420;
+  color: #e6e8ee;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #161c2c;
+  border-bottom: 1px solid #262f47;
+}
+
+.header h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.chart {
+  width: 100%;
+  height: 380px;
+  background: #161c2c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pregunta {
+  text-align: center;
+  font-size: 1.05rem;
+  margin: 20px 0 12px;
+}
+
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid #2d3650;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  background: #1e2538;
+  color: #e6e8ee;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  background: #2a3350;
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.btn-opcion.correcta {
+  background: #1d4d33;
+  border-color: #2f9e5f;
+}
+
+.btn-opcion.incorrecta {
+  background: #4d1d24;
+  border-color: #b3394a;
+}
+
+.btn-primario {
+  background: #2f6fed;
+  border-color: #2f6fed;
+  width: 100%;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.btn-primario:hover {
+  background: #2559c4;
+}
+
+.btn-secundario {
+  background: transparent;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #161c2c;
+  border: 1px solid #262f47;
+}
+
+.resultado-texto {
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.resultado-texto.correcta {
+  color: #4fd88a;
+}
+
+.resultado-texto.incorrecta {
+  color: #f0748a;
+}
+
+.explicacion {
+  margin: 0;
+  color: #b8bfd1;
+  line-height: 1.4;
+}
