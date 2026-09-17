@@ -10,25 +10,34 @@
 <body>
   <header class="header">
     <h1>Práctica de patrones de velas japonesas</h1>
-    <div class="stats">
+    <nav class="tabs">
+      <button type="button" class="tab-btn active" data-tab="velas">Velas</button>
+      <button type="button" class="tab-btn" data-tab="canales">Canales</button>
+      <button type="button" class="tab-btn" data-tab="estrategias">Estrategias</button>
+      <button type="button" class="tab-btn" data-tab="velocidad">Velocidad</button>
+    </nav>
+  </header>
+
+  <section id="tab-velas" class="tab-panel">
+    <div class="fase-subheader">
+      <h2>Velas</h2>
       <span id="stats-aciertos">Aciertos: 0 / 0</span>
       <button id="btn-reset" class="btn btn-secundario">Reiniciar progreso</button>
     </div>
-  </header>
+    <div class="main">
+      <div id="chart" class="chart"></div>
 
-  <main class="main">
-    <div id="chart" class="chart"></div>
+      <p class="pregunta">¿Qué patrón forma la vela resaltada?</p>
 
-    <p class="pregunta">¿Qué patrón forma la vela resaltada?</p>
+      <div id="opciones" class="opciones"></div>
 
-    <div id="opciones" class="opciones"></div>
-
-    <div id="resultado" class="resultado" hidden>
-      <p id="resultado-texto" class="resultado-texto"></p>
-      <p id="explicacion" class="explicacion"></p>
-      <button id="btn-siguiente" class="btn btn-primario">Siguiente</button>
+      <div id="resultado" class="resultado" hidden>
+        <p id="resultado-texto" class="resultado-texto"></p>
+        <p id="explicacion" class="explicacion"></p>
+        <button id="btn-siguiente" class="btn btn-primario">Siguiente</button>
+      </div>
     </div>
-  </main>
+  </section>
 
   <section id="tab-canales" class="tab-panel" hidden>
     <div class="fase-subheader">
@@ -138,5 +147,6 @@
   <script src="fase2.js"></script>
   <script src="fase3.js"></script>
   <script src="fase4.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>

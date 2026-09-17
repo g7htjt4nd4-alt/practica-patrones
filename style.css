@@ -32,6 +32,33 @@ body {
   font-size: 0.95rem;
 }
 
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  cursor: pointer;
+  border: 1px solid #2d3650;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #b8bfd1;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.tab-btn:hover {
+  background: #1e2538;
+}
+
+.tab-btn.active {
+  background: #2f6fed;
+  border-color: #2f6fed;
+  color: #fff;
+}
+
 .main {
   max-width: 820px;
   margin: 0 auto;

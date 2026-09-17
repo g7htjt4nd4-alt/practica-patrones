@@ -136,5 +136,9 @@
     ETIQUETAS,
     dibujarEnGrafico,
     obtenerEjemplos: () => ejemplos,
+    activar: () => {
+      grafico.ajustarTamano();
+      chart.timeScale().fitContent();
+    },
   };
 })();
