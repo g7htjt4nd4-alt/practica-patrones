@@ -48,9 +48,40 @@
     </div>
   </section>
 
+  <section id="tab-estrategias" class="tab-panel" hidden>
+    <div class="fase-subheader">
+      <h2>Checklist de las 5 estrategias</h2>
+      <span id="f3-stats">Aciertos: 0 / 0</span>
+      <button id="f3-btn-reset" class="btn btn-secundario">Reiniciar progreso</button>
+    </div>
+    <div class="main">
+      <p id="f3-contexto" class="contexto"></p>
+      <div id="f3-vela" class="vela-gatillo"></div>
+      <div id="f3-volumen" class="volumen" hidden>
+        <div class="volumen-barra">
+          <span class="volumen-label">Actual</span>
+          <div class="volumen-track"><div id="f3-volumen-actual" class="volumen-fill"></div></div>
+        </div>
+        <div class="volumen-barra">
+          <span class="volumen-label">Umbral</span>
+          <div class="volumen-track"><div id="f3-volumen-umbral" class="volumen-fill volumen-fill-umbral"></div></div>
+        </div>
+        <p id="f3-volumen-texto" class="volumen-texto"></p>
+      </div>
+      <p class="pregunta">¿Qué estrategia del checklist aplica?</p>
+      <div id="f3-opciones" class="opciones"></div>
+      <div id="f3-resultado" class="resultado" hidden>
+        <p id="f3-resultado-texto" class="resultado-texto"></p>
+        <p id="f3-explicacion" class="explicacion"></p>
+        <button id="f3-btn-siguiente" class="btn btn-primario">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
   <script src="shared.js"></script>
   <script src="app.js"></script>
   <script src="fase2.js"></script>
+  <script src="fase3.js"></script>
 </body>
 </html>

@@ -147,3 +147,64 @@ body {
   color: #b8bfd1;
   line-height: 1.4;
 }
+
+.contexto {
+  background: #161c2c;
+  border: 1px solid #262f47;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.vela-gatillo {
+  width: 160px;
+  height: 220px;
+  margin: 16px auto;
+}
+
+.volumen {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  background: #161c2c;
+  border: 1px solid #262f47;
+  border-radius: 8px;
+}
+
+.volumen-barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.volumen-label {
+  width: 60px;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: #b8bfd1;
+}
+
+.volumen-track {
+  flex: 1;
+  background: #1e2538;
+  border-radius: 4px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.volumen-fill {
+  height: 100%;
+  background: #2f6fed;
+  border-radius: 4px;
+}
+
+.volumen-fill-umbral {
+  background: #7a8299;
+}
+
+.volumen-texto {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #b8bfd1;
+}

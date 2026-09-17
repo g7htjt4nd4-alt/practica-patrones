@@ -1,0 +1,1091 @@
+[
+  {
+    "id": "SMA_hora-001",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.47,
+      "l": 99.7,
+      "c": 101.17
+    },
+    "volumen": {
+      "actual_pct_avg": 59,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "ninguna-005",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: el precio viene en un rango lateral sin una línea bajista clara que conecte al menos 2 máximos. La vela V10 (9:30-10:00) se formó roja.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.2,
+      "l": 98.31,
+      "c": 98.7
+    },
+    "volumen": null,
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "ninguna-007",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "BAC: la vela V10 abrió con gap alcista y cerró verde. La vela V11 es verde alcista y rompe el canal bajista, pero su volumen se ve bajo comparado con el promedio del día.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.25,
+      "l": 99.63,
+      "c": 100.96
+    },
+    "volumen": {
+      "actual_pct_avg": 18,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "V10_roja-006",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.35,
+      "l": 98.29,
+      "c": 98.62
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "SMA_dia-007",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 200. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.12,
+      "l": 99.68,
+      "c": 100.8
+    },
+    "volumen": {
+      "actual_pct_avg": 60,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "VV11-005",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la vela V10 (9:30-10:00) abrió con gap bajista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.4,
+      "l": 99.63,
+      "c": 101.07
+    },
+    "volumen": {
+      "actual_pct_avg": 83,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "SMA_dia-002",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.94,
+      "l": 99.53,
+      "c": 100.65
+    },
+    "volumen": {
+      "actual_pct_avg": 64,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "SMA_dia-000",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.54,
+      "l": 99.72,
+      "c": 101.11
+    },
+    "volumen": {
+      "actual_pct_avg": 72,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "V10_roja-001",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.07,
+      "l": 98.74,
+      "c": 99.01
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "SMA_hora-007",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.33,
+      "l": 99.63,
+      "c": 100.95
+    },
+    "volumen": {
+      "actual_pct_avg": 81,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "SMA_dia-005",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.05,
+      "l": 99.52,
+      "c": 100.63
+    },
+    "volumen": {
+      "actual_pct_avg": 79,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "ninguna-004",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: el precio viene en un rango lateral sin una línea bajista clara que conecte al menos 2 máximos. La vela V10 (9:30-10:00) se formó roja.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.27,
+      "l": 98.9,
+      "c": 99.14
+    },
+    "volumen": null,
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "SMA_hora-005",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.0,
+      "l": 99.68,
+      "c": 100.67
+    },
+    "volumen": {
+      "actual_pct_avg": 63,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "Falso_Ga-002",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la V10 abrió con gap alcista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.14,
+      "l": 98.41,
+      "c": 99.06
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "SMA_hora-002",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.23,
+      "l": 99.71,
+      "c": 100.83
+    },
+    "volumen": {
+      "actual_pct_avg": 58,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "Falso_Ga-003",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY: la V10 abrió con gap bajista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.28,
+      "l": 99.09,
+      "c": 99.17
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "SMA_hora-003",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.25,
+      "l": 99.78,
+      "c": 100.94
+    },
+    "volumen": {
+      "actual_pct_avg": 91,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "Falso_Ga-000",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: la V10 abrió con gap alcista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.4,
+      "l": 98.9,
+      "c": 99.15
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "V10_roja-003",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.26,
+      "l": 98.39,
+      "c": 98.91
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "VV11-003",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la vela V10 (9:30-10:00) abrió con gap bajista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.29,
+      "l": 99.83,
+      "c": 101.12
+    },
+    "volumen": {
+      "actual_pct_avg": 94,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "ninguna-003",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: la V10 abrió con gap alcista y cerró verde. Ya pasaron varias horas y el precio sigue por encima del piso de esa V10 — la línea de control todavía no se ha roto. Aun así, apareció una vela roja en el camino.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.17,
+      "l": 98.55,
+      "c": 99.05
+    },
+    "volumen": null,
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "V10_roja-005",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.34,
+      "l": 98.97,
+      "c": 99.35
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "VV11-007",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: la vela V10 (9:30-10:00) abrió con gap alcista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.16,
+      "l": 99.62,
+      "c": 100.85
+    },
+    "volumen": {
+      "actual_pct_avg": 71,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "SMA_hora-000",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.18,
+      "l": 99.59,
+      "c": 101.04
+    },
+    "volumen": {
+      "actual_pct_avg": 91,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "ninguna-006",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ, vista diaria: la acción corrigió y ya perforó el SMA 100 — cerró el día por debajo de ese nivel, no sobre él. En el gráfico horario aparece una vela verde que rompe una línea de caída de corto plazo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.25,
+      "l": 99.87,
+      "c": 100.85
+    },
+    "volumen": {
+      "actual_pct_avg": 63,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "VV11-000",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la vela V10 (9:30-10:00) abrió con gap bajista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.25,
+      "l": 99.73,
+      "c": 101.01
+    },
+    "volumen": {
+      "actual_pct_avg": 83,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "VV11-006",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "BAC: la vela V10 (9:30-10:00) abrió con gap bajista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.35,
+      "l": 99.68,
+      "c": 101.13
+    },
+    "volumen": {
+      "actual_pct_avg": 55,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "SMA_hora-006",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.32,
+      "l": 99.59,
+      "c": 100.98
+    },
+    "volumen": {
+      "actual_pct_avg": 66,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "SMA_hora-004",
+    "patron_correcto": "SMA_hora",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, gráfico de 1 hora: el SMA 20 está por encima del SMA 40. El precio corrigió y frenó milimétricamente justo en el SMA 40. La vela actual es verde alcista y rompe la línea de caída trazada sobre los pabilos de la corrección.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.2,
+      "l": 99.74,
+      "c": 100.73
+    },
+    "volumen": {
+      "actual_pct_avg": 74,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 4: la corrección frenó milimétricamente en el SMA 40 (con SMA 20 > SMA 40), y la vela de ruptura es verde con volumen > 50% del promedio."
+  },
+  {
+    "id": "Falso_Ga-006",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la V10 abrió con gap bajista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.27,
+      "l": 98.88,
+      "c": 99.15
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "ninguna-001",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY: la V10 abrió con gap bajista y cerró verde. Ya pasaron varias horas y el precio sigue por encima del piso de esa V10 — la línea de control todavía no se ha roto. Aun así, apareció una vela roja en el camino.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.23,
+      "l": 98.83,
+      "c": 99.14
+    },
+    "volumen": null,
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "VV11-001",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA: la vela V10 (9:30-10:00) abrió con gap bajista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.43,
+      "l": 99.6,
+      "c": 101.09
+    },
+    "volumen": {
+      "actual_pct_avg": 95,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "SMA_dia-003",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "BAC, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 200. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.96,
+      "l": 99.63,
+      "c": 100.55
+    },
+    "volumen": {
+      "actual_pct_avg": 79,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "SMA_dia-006",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "NVDA, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.82,
+      "l": 99.79,
+      "c": 100.61
+    },
+    "volumen": {
+      "actual_pct_avg": 67,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "Falso_Ga-004",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: la V10 abrió con gap bajista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.21,
+      "l": 99.19,
+      "c": 99.29
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "Falso_Ga-005",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la V10 abrió con gap alcista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.17,
+      "l": 98.74,
+      "c": 98.98
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "SMA_dia-001",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.16,
+      "l": 99.81,
+      "c": 100.78
+    },
+    "volumen": {
+      "actual_pct_avg": 66,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "VV11-002",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: la vela V10 (9:30-10:00) abrió con gap alcista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.54,
+      "l": 99.73,
+      "c": 101.25
+    },
+    "volumen": {
+      "actual_pct_avg": 89,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "VV11-004",
+    "patron_correcto": "VV11",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY: la vela V10 (9:30-10:00) abrió con gap alcista y cerró verde alcista. Ahora estás en la vela V11 (10:00-11:00): es verde alcista y acaba de romper el canal bajista que traía el precio.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.05,
+      "l": 99.68,
+      "c": 100.75
+    },
+    "volumen": {
+      "actual_pct_avg": 57,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumplen las 3 condiciones de la Formación 3 (VV11): la vela V11 es verde alcista, rompe el canal/línea de caída, y su volumen supera el 50% del promedio."
+  },
+  {
+    "id": "ninguna-002",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la vela V10 abrió con gap bajista y cerró verde. La vela V11 es verde alcista y rompe el canal bajista, pero su volumen se ve bajo comparado con el promedio del día.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 101.58,
+      "l": 99.66,
+      "c": 101.32
+    },
+    "volumen": {
+      "actual_pct_avg": 23,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "V10_roja-004",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.39,
+      "l": 98.46,
+      "c": 98.8
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "Falso_Ga-007",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY: la V10 abrió con gap bajista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.29,
+      "l": 98.77,
+      "c": 98.97
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "SMA_dia-004",
+    "patron_correcto": "SMA_dia",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "QQQ, vista diaria: la acción corrigió tras superar el SMA 20 y frenó justo sobre el SMA 100. Al cierre del día se mantuvo sobre ese nivel. En el gráfico horario, la vela actual rompe la línea de caída trazada sobre los pabilos de la corrección, en verde.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.82,
+      "l": 99.63,
+      "c": 100.76
+    },
+    "volumen": {
+      "actual_pct_avg": 78,
+      "umbral_pct_avg": 50
+    },
+    "explicacion": "Se cumple la Formación 5: la corrección frenó en el SMA 100/200 (vista diaria) y la ruptura horaria posterior confirma con vela verde y volumen suficiente."
+  },
+  {
+    "id": "V10_roja-007",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.22,
+      "l": 98.44,
+      "c": 98.62
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "Falso_Ga-001",
+    "patron_correcto": "Falso_Gap",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "BAC: la V10 abrió con gap bajista y cerró verde (el 'engaño'). Se trazó la línea de control en el piso exacto de esa vela V10. La vela actual, unas horas después, acaba de romper esa línea de control hacia abajo, en rojo.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.44,
+      "l": 98.6,
+      "c": 98.92
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia de Falso Gap: la V10 abrió con gap y cerró verde (el 'engaño'), pero una vela posterior rompió el piso de esa V10 con una vela roja — gatillo para put."
+  },
+  {
+    "id": "ninguna-000",
+    "patron_correcto": "ninguna",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "AAPL: la V10 abrió con gap bajista y cerró verde. Ya pasaron varias horas y el precio sigue por encima del piso de esa V10 — la línea de control todavía no se ha roto. Aun así, apareció una vela roja en el camino.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.18,
+      "l": 98.95,
+      "c": 99.22
+    },
+    "volumen": null,
+    "explicacion": "Casi calza con una de las estrategias, pero falla una condición obligatoria del checklist — no es un gatillo válido todavía."
+  },
+  {
+    "id": "V10_roja-000",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "BAC: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.28,
+      "l": 98.98,
+      "c": 99.21
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  },
+  {
+    "id": "V10_roja-002",
+    "patron_correcto": "V10_roja",
+    "opciones": [
+      "VV11",
+      "SMA_hora",
+      "SMA_dia",
+      "V10_roja",
+      "Falso_Gap",
+      "ninguna"
+    ],
+    "contexto": "SPY: el precio ya viene operando claramente dentro de un canal bajista validado (la línea toca 2 veces los máximos). La vela V10 (9:30-10:00) se acaba de formar roja y con dirección bajista.",
+    "vela_gatillo": {
+      "o": 100.0,
+      "h": 100.16,
+      "l": 98.98,
+      "c": 99.3
+    },
+    "volumen": null,
+    "explicacion": "Se cumple la Estrategia V10 Roja: la acción ya operaba dentro de un canal bajista validado, y la vela V10 (9:30-10:00) se formó roja y bajista — gatillo para put."
+  }
+]
