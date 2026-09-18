@@ -9,6 +9,7 @@
   const URL_CASOS = 'data/backtesting/backtest_cases.json';
 
   const ORDEN_ESTRATEGIAS = ['VV11', 'SMA_hora', 'SMA_dia', 'V10_roja', 'Falso_Gap'];
+  const MIN_N_PARA_PROBABILIDAD = 5;
 
   const ETIQUETAS_RESULTADO = {
     gana: 'Ganó',
@@ -75,6 +76,21 @@
         card.innerHTML = `
           <h3>${etiquetaEstrategia(clave)}</h3>
           <p class="bt-prob-aviso">${(datos && datos.aviso) || 'Sin casos detectados en el período.'}</p>
+          ${fuenteHTML}
+        `;
+        probabilidadesEl.appendChild(card);
+        return;
+      }
+
+      if (datos.n < MIN_N_PARA_PROBABILIDAD) {
+        card.innerHTML = `
+          <h3>${etiquetaEstrategia(clave)}</h3>
+          <p class="bt-prob-n">n = ${datos.n} casos detectados</p>
+          <p class="bt-prob-insuficiente">
+            Muestra insuficiente para estimar una probabilidad (menos de 5
+            casos). Necesita más corridas del backtest acumulándose con el
+            tiempo.
+          </p>
           ${fuenteHTML}
         `;
         probabilidadesEl.appendChild(card);

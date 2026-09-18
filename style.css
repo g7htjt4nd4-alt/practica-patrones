@@ -588,6 +588,24 @@ body {
   font-style: italic;
 }
 
+.bt-prob-n {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e6e8ee;
+}
+
+.bt-prob-insuficiente {
+  margin: 0;
+  padding: 10px 12px;
+  background: #2a2410;
+  border: 1px solid #5a4a1a;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #f5c542;
+  line-height: 1.4;
+}
+
 .bt-prob-barra {
   display: flex;
   height: 14px;
