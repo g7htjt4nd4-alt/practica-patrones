@@ -644,6 +644,12 @@ body {
   color: #f5c542;
 }
 
+.bt-prob-fuente {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  color: #7a8299;
+}
+
 .bt-separador {
   border: none;
   border-top: 1px solid #262f47;

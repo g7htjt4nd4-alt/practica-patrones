@@ -1,50 +1,61 @@
 {
-  "generado": "2026-09-18T18:28:10.878806-04:00",
-  "periodo_datos": "60d",
+  "generado": "2026-09-18T18:33:12.462677-04:00",
+  "fuentes": {
+    "VV11": "30min (60d)",
+    "V10_roja": "30min (60d)",
+    "Falso_Gap": "30min (60d)",
+    "SMA_hora": "1h (730d)",
+    "SMA_dia": "diario (5y) + 1h para confirmación"
+  },
   "tickers": [
     "SPY",
     "QQQ"
   ],
   "estrategias": {
     "VV11": {
-      "n": 13,
+      "n": 2,
       "direccion": "CALL",
-      "pct_gana": 46.2,
-      "pct_pierde": 23.1,
-      "pct_neutral": 30.8,
-      "movimiento_promedio_pct": 0.17,
-      "confiabilidad": "baja (n<20, tratar como orientativo, no concluyente)"
+      "pct_gana": 100.0,
+      "pct_pierde": 0.0,
+      "pct_neutral": 0.0,
+      "movimiento_promedio_pct": 0.48,
+      "confiabilidad": "baja (n<20, orientativo, no concluyente)"
     },
     "SMA_hora": {
-      "n": 14,
+      "n": 117,
       "direccion": "CALL",
-      "pct_gana": 21.4,
-      "pct_pierde": 50.0,
-      "pct_neutral": 28.6,
-      "movimiento_promedio_pct": -0.13,
-      "confiabilidad": "baja (n<20, tratar como orientativo, no concluyente)"
+      "pct_gana": 37.6,
+      "pct_pierde": 35.0,
+      "pct_neutral": 27.4,
+      "movimiento_promedio_pct": -0.09,
+      "confiabilidad": "moderada (sigue siendo un período relativamente corto)"
     },
     "SMA_dia": {
-      "n": 0,
-      "aviso": "Sin casos detectados en el período — revisar umbrales."
+      "n": 26,
+      "direccion": "CALL",
+      "pct_gana": 46.2,
+      "pct_pierde": 30.8,
+      "pct_neutral": 23.1,
+      "movimiento_promedio_pct": 0.13,
+      "confiabilidad": "moderada (sigue siendo un período relativamente corto)"
     },
     "V10_roja": {
-      "n": 38,
+      "n": 27,
       "direccion": "PUT",
-      "pct_gana": 26.3,
-      "pct_pierde": 47.4,
-      "pct_neutral": 26.3,
-      "movimiento_promedio_pct": 0.11,
-      "confiabilidad": "moderada (sigue siendo un período corto)"
+      "pct_gana": 25.9,
+      "pct_pierde": 25.9,
+      "pct_neutral": 48.1,
+      "movimiento_promedio_pct": 0.04,
+      "confiabilidad": "moderada (sigue siendo un período relativamente corto)"
     },
     "Falso_Gap": {
-      "n": 35,
+      "n": 25,
       "direccion": "PUT",
       "pct_gana": 40.0,
-      "pct_pierde": 37.1,
-      "pct_neutral": 22.9,
-      "movimiento_promedio_pct": -0.02,
-      "confiabilidad": "moderada (sigue siendo un período corto)"
+      "pct_pierde": 28.0,
+      "pct_neutral": 32.0,
+      "movimiento_promedio_pct": -0.04,
+      "confiabilidad": "moderada (sigue siendo un período relativamente corto)"
     }
   }
 }

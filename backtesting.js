@@ -66,6 +66,8 @@
     probabilidadesEl.innerHTML = '';
     ORDEN_ESTRATEGIAS.forEach((clave) => {
       const datos = stats.estrategias[clave];
+      const fuente = stats.fuentes && stats.fuentes[clave];
+      const fuenteHTML = fuente ? `<p class="bt-prob-fuente">Fuente: ${fuente}</p>` : '';
       const card = document.createElement('div');
       card.className = 'bt-prob-card';
 
@@ -73,6 +75,7 @@
         card.innerHTML = `
           <h3>${etiquetaEstrategia(clave)}</h3>
           <p class="bt-prob-aviso">${(datos && datos.aviso) || 'Sin casos detectados en el período.'}</p>
+          ${fuenteHTML}
         `;
         probabilidadesEl.appendChild(card);
         return;
@@ -92,6 +95,7 @@
         </p>
         <p class="bt-prob-movimiento">Movimiento promedio: ${datos.movimiento_promedio_pct}%</p>
         <p class="bt-prob-confiabilidad">n = ${datos.n} · ${datos.confiabilidad}</p>
+        ${fuenteHTML}
       `;
       probabilidadesEl.appendChild(card);
     });
