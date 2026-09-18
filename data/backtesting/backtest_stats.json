@@ -1,0 +1,50 @@
+{
+  "generado": "2026-09-18T18:12:33.376540-04:00",
+  "periodo_datos": "60d",
+  "tickers": [
+    "SPY",
+    "QQQ"
+  ],
+  "estrategias": {
+    "VV11": {
+      "n": 13,
+      "direccion": "CALL",
+      "pct_gana": 46.2,
+      "pct_pierde": 23.1,
+      "pct_neutral": 30.8,
+      "movimiento_promedio_pct": 0.17,
+      "confiabilidad": "baja (n<20, tratar como orientativo, no concluyente)"
+    },
+    "SMA_hora": {
+      "n": 14,
+      "direccion": "CALL",
+      "pct_gana": 21.4,
+      "pct_pierde": 50.0,
+      "pct_neutral": 28.6,
+      "movimiento_promedio_pct": -0.13,
+      "confiabilidad": "baja (n<20, tratar como orientativo, no concluyente)"
+    },
+    "SMA_dia": {
+      "n": 0,
+      "aviso": "Sin casos detectados en el período — revisar umbrales."
+    },
+    "V10_roja": {
+      "n": 38,
+      "direccion": "PUT",
+      "pct_gana": 26.3,
+      "pct_pierde": 47.4,
+      "pct_neutral": 26.3,
+      "movimiento_promedio_pct": 0.11,
+      "confiabilidad": "moderada (sigue siendo un período corto)"
+    },
+    "Falso_Gap": {
+      "n": 108,
+      "direccion": "PUT",
+      "pct_gana": 38.0,
+      "pct_pierde": 41.7,
+      "pct_neutral": 20.4,
+      "movimiento_promedio_pct": 0.08,
+      "confiabilidad": "moderada (sigue siendo un período corto)"
+    }
+  }
+}
