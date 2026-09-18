@@ -1,0 +1,38 @@
+[
+  {
+    "patron": "canal_bajista_valido_con_ruptura",
+    "archivo": "canal_bajista_con_ruptura.png",
+    "titulo": "Canal bajista válido — con ruptura",
+    "definicion": "La línea de caída toca 2 veces los máximos (regla de validación mínima) y una vela verde la rompe con fuerza: ruptura alcista confirmada."
+  },
+  {
+    "patron": "canal_bajista_valido_sin_ruptura",
+    "archivo": "canal_bajista_sin_ruptura.png",
+    "titulo": "Canal bajista válido — sin ruptura",
+    "definicion": "La línea de caída toca 2 veces los máximos — canal bajista válido — pero el precio todavía la respeta, sin ruptura."
+  },
+  {
+    "patron": "canal_alcista_valido_con_ruptura",
+    "archivo": "canal_alcista_con_ruptura.png",
+    "titulo": "Canal alcista válido — con ruptura",
+    "definicion": "La línea de soporte toca 2 veces los mínimos: canal alcista válido, y una vela roja la rompe hacia abajo: ruptura bajista confirmada."
+  },
+  {
+    "patron": "canal_alcista_valido_sin_ruptura",
+    "archivo": "canal_alcista_sin_ruptura.png",
+    "titulo": "Canal alcista válido — sin ruptura",
+    "definicion": "La línea de soporte toca 2 veces los mínimos: canal alcista válido, y el precio todavía la respeta — sin ruptura."
+  },
+  {
+    "patron": "canal_invalido",
+    "archivo": "canal_invalido.png",
+    "titulo": "Canal inválido (1 solo toque)",
+    "definicion": "La recta solo toca el precio una vez. Según la regla de validación (mínimo 2 toques), no es un canal confiable todavía."
+  },
+  {
+    "patron": "ninguno",
+    "archivo": "ninguno_canal.png",
+    "titulo": "Ninguno / rango lateral",
+    "definicion": "Movimiento lateral sin una línea de tendencia clara que conecte máximos o mínimos. No hay canal que trazar."
+  }
+]

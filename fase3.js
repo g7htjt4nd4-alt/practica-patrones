@@ -28,6 +28,7 @@
   const resultadoTextoEl = document.getElementById('f3-resultado-texto');
   const explicacionEl = document.getElementById('f3-explicacion');
   const btnSiguiente = document.getElementById('f3-btn-siguiente');
+  const btnVerReferencia = document.getElementById('f3-btn-ver-referencia');
 
   const mazo = S.crearMazo();
   let ejemplos = [];
@@ -115,6 +116,10 @@
   }
 
   btnSiguiente.addEventListener('click', siguienteEjemplo);
+
+  btnVerReferencia.addEventListener('click', () => {
+    window.Glosario.mostrarModalFicha(actual.patron_correcto);
+  });
 
   btnReset.addEventListener('click', () => {
     const confirmado = window.confirm('¿Reiniciar el progreso guardado de Fase 3? Esta acción no se puede deshacer.');

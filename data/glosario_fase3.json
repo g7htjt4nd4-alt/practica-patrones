@@ -1,0 +1,87 @@
+{
+  "_nota": "Glosario de la Fase 3. A diferencia de Fase 1 y 2, aquí no hay imagen de referencia -- es lógica de checklist, no reconocimiento visual. Cada entrada es una ficha con el checklist completo, tomado de notas-curso-bolsa-newlife.md sección 9.",
+  "fichas": [
+    {
+      "patron": "VV11",
+      "titulo": "VV11 — Gap + ruptura de canal",
+      "direccion": "CALL (alza)",
+      "temporalidad": "V10 / V11 (hora)",
+      "checklist": [
+        "V10 (9:30-10:00) abre con gap (alcista o bajista) y cierra verde alcista",
+        "V11 (10:00-11:00) es verde alcista",
+        "V11 rompe el canal o línea de caída existente",
+        "Volumen de V11 > 50% del promedio (obligatorio)"
+      ],
+      "senal_ruptura": "Vela V11 verde rompe canal bajista, con volumen > 50% Avg",
+      "definicion": "Formación 3 del playbook. La condición de volumen es la que más se pasa por alto: sin ella, no hay entrada válida aunque la dirección y la ruptura se vean bien."
+    },
+    {
+      "patron": "SMA_hora",
+      "titulo": "S.M.A. — Temporalidad de 1 hora (Formación 4)",
+      "direccion": "CALL (alza)",
+      "temporalidad": "Hora",
+      "checklist": [
+        "SMA 20 está por encima del SMA 40 (condición previa)",
+        "La corrección frena milimétricamente en el SMA 40",
+        "Se traza línea de caída sobre los pabilos de la corrección (mínimo 2 toques)",
+        "Una vela verde alcista rompe esa línea con volumen > 50% del promedio"
+      ],
+      "senal_ruptura": "Rebote en SMA 40 + ruptura verde con volumen suficiente",
+      "definicion": "El punto que más se falla aquí: confundir 'se acercó al SMA 40' con 'frenó exactamente ahí'. Si la corrección se detiene mucho antes o sigue de largo, no aplica todavía."
+    },
+    {
+      "patron": "SMA_dia",
+      "titulo": "S.M.A. — Temporalidad de Día (Formación 5)",
+      "direccion": "CALL (alza)",
+      "temporalidad": "Día (macro) confirmado en Hora (micro)",
+      "checklist": [
+        "Vista diaria: la acción corrigió tras superar el SMA 20",
+        "La corrección frena en el SMA 100 o SMA 200 (vista diaria)",
+        "Al cierre del día, la acción permanece sobre ese SMA (no lo perforó)",
+        "Vista horaria: línea de caída trazada sobre pabilos + ruptura verde",
+        "Volumen de la vela de ruptura > 50% del promedio",
+        "Al menos 1 de las 7 velas horarias del día tiene 100% de volumen",
+        "Ninguna vela cae bajo el piso del gap de V10"
+      ],
+      "senal_ruptura": "Rebote en SMA 100/200 (día) + ruptura verde confirmada en hora",
+      "definicion": "Es la versión 'macro' de la Formación 4 — mismo concepto, pero usando los pisos de largo plazo. Tiene más condiciones que verificar, por eso es la más exigente de las 3 estrategias CALL."
+    },
+    {
+      "patron": "V10_roja",
+      "titulo": "V10 Roja — Reversión en canal bajista",
+      "direccion": "PUT (baja)",
+      "temporalidad": "V10 (hora)",
+      "checklist": [
+        "Condición previa: el precio YA opera dentro de un canal o línea bajista validada (mínimo 2 toques)",
+        "La vela V10 (9:30-10:00) se forma roja y con dirección bajista"
+      ],
+      "senal_ruptura": "Vela V10 se forma roja dentro de un canal bajista ya activo",
+      "definicion": "La más simple de las 5 en número de condiciones, pero exige que el canal bajista ya esté validado ANTES de la apertura — no sirve trazarlo después de ver la V10 roja."
+    },
+    {
+      "patron": "Falso_Gap",
+      "titulo": "Falso Gap — Trampa alcista revertida",
+      "direccion": "PUT (baja)",
+      "temporalidad": "Hora",
+      "checklist": [
+        "V10 abre con gap (alza o baja) y cierra VERDE (el 'engaño')",
+        "Se traza una línea de control exactamente en el piso de esa V10",
+        "Una vela de hora posterior rompe esa línea de control hacia abajo, en ROJO"
+      ],
+      "senal_ruptura": "Vela roja posterior rompe el piso de la V10 verde inicial",
+      "definicion": "La trampa está en que la V10 verde parece alcista — la señal real de venta aparece horas después, cuando el precio pierde el piso que parecía sostenerlo."
+    },
+    {
+      "patron": "ninguna",
+      "titulo": "Ninguna estrategia aplica todavía",
+      "direccion": "—",
+      "temporalidad": "—",
+      "checklist": [
+        "Falta al menos una condición obligatoria de alguna de las 5 estrategias",
+        "Casos típicos: volumen insuficiente, la corrección no llegó al SMA correcto, el canal aún no tiene 2 toques, o el precio no perforó la línea de control"
+      ],
+      "senal_ruptura": "—",
+      "definicion": "El error más común no es fallar el patrón, es apurar la entrada cuando falta una sola condición del checklist. 'Casi cumple' sigue siendo 'no cumple'."
+    }
+  ]
+}

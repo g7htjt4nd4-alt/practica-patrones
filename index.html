@@ -56,7 +56,10 @@
       <div id="f2-resultado" class="resultado" hidden>
         <p id="f2-resultado-texto" class="resultado-texto"></p>
         <p id="f2-explicacion" class="explicacion"></p>
-        <button id="f2-btn-siguiente" class="btn btn-primario">Siguiente</button>
+        <div class="resultado-acciones">
+          <button id="f2-btn-ver-referencia" class="btn btn-secundario">Ver imagen de referencia</button>
+          <button id="f2-btn-siguiente" class="btn btn-primario">Siguiente</button>
+        </div>
       </div>
     </div>
   </section>
@@ -86,7 +89,10 @@
       <div id="f3-resultado" class="resultado" hidden>
         <p id="f3-resultado-texto" class="resultado-texto"></p>
         <p id="f3-explicacion" class="explicacion"></p>
-        <button id="f3-btn-siguiente" class="btn btn-primario">Siguiente</button>
+        <div class="resultado-acciones">
+          <button id="f3-btn-ver-referencia" class="btn btn-secundario">Ver referencia</button>
+          <button id="f3-btn-siguiente" class="btn btn-primario">Siguiente</button>
+        </div>
       </div>
     </div>
   </section>
@@ -148,9 +154,22 @@
   <section id="tab-glosario" class="tab-panel" hidden>
     <div class="fase-subheader">
       <h2>Glosario</h2>
+      <nav class="subtabs">
+        <button type="button" class="subtab-btn active" data-subtab="velas">Velas</button>
+        <button type="button" class="subtab-btn" data-subtab="canales">Canales</button>
+        <button type="button" class="subtab-btn" data-subtab="estrategias">Estrategias</button>
+      </nav>
     </div>
     <div class="main">
-      <div id="glosario-lista" class="glosario-grid"></div>
+      <div id="glosario-velas" class="glosario-sub">
+        <div id="glosario-lista" class="glosario-grid"></div>
+      </div>
+      <div id="glosario-canales" class="glosario-sub" hidden>
+        <div id="glosario-lista-canales" class="glosario-grid"></div>
+      </div>
+      <div id="glosario-estrategias" class="glosario-sub" hidden>
+        <div id="glosario-lista-estrategias" class="fichas-grid"></div>
+      </div>
     </div>
   </section>
 
@@ -160,6 +179,13 @@
       <img id="modal-imagen" class="modal-imagen" src="" alt="" />
       <h3 id="modal-titulo"></h3>
       <p id="modal-definicion"></p>
+    </div>
+  </div>
+
+  <div id="modal-ficha" class="modal-overlay" hidden>
+    <div class="modal-caja modal-caja-ancha">
+      <button id="modal-ficha-cerrar" class="modal-cerrar" type="button" aria-label="Cerrar">×</button>
+      <div id="modal-ficha-contenido"></div>
     </div>
   </div>
 
