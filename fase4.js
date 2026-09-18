@@ -18,6 +18,7 @@
   const cronometroBarraEl = document.getElementById('f4-cronometro-barra');
   const cronometroTextoEl = document.getElementById('f4-cronometro-texto');
   const chartContainer = document.getElementById('f4-chart');
+  const avisoSinLineaEl = document.getElementById('f4-aviso-sin-linea');
   const fase3AreaEl = document.getElementById('f4-fase3-area');
   const contextoEl = document.getElementById('f4-contexto');
   const velaEl = document.getElementById('f4-vela');
@@ -58,6 +59,7 @@
   function renderPreguntaVisual(item) {
     if (item.fase === 3) {
       chartContainer.hidden = true;
+      avisoSinLineaEl.hidden = true;
       fase3AreaEl.hidden = false;
       if (lineaSerieActual) {
         grafico.chart.removeSeries(lineaSerieActual);
@@ -74,8 +76,9 @@
     fase3AreaEl.hidden = true;
 
     if (item.fase === 2) {
-      lineaSerieActual = window.Fase2.dibujarEnGrafico(grafico, item.datos, lineaSerieActual);
+      lineaSerieActual = window.Fase2.dibujarEnGrafico(grafico, item.datos, lineaSerieActual, avisoSinLineaEl);
     } else {
+      avisoSinLineaEl.hidden = true;
       if (lineaSerieActual) {
         grafico.chart.removeSeries(lineaSerieActual);
         lineaSerieActual = null;

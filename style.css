@@ -94,6 +94,28 @@ body {
   overflow: hidden;
 }
 
+.chart-wrap {
+  position: relative;
+}
+
+.chart-aviso {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+  max-width: calc(100% - 24px);
+  background: rgba(15, 20, 32, 0.85);
+  border: 1px solid #3a4568;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d5d9e6;
+  text-align: center;
+}
+
 .pregunta {
   text-align: center;
   font-size: 1.05rem;
@@ -226,6 +248,17 @@ body {
   font-size: 0.85rem;
   color: #b8bfd1;
   line-height: 1.4;
+}
+
+.glosario-card-badge {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #2a3350;
+  color: #9fb3ff;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .modal-overlay {

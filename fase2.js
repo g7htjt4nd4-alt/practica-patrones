@@ -18,6 +18,7 @@
   const statsEl = document.getElementById('f2-stats');
   const btnReset = document.getElementById('f2-btn-reset');
   const chartContainer = document.getElementById('f2-chart');
+  const avisoSinLineaEl = document.getElementById('f2-aviso-sin-linea');
   const opcionesEl = document.getElementById('f2-opciones');
   const resultadoEl = document.getElementById('f2-resultado');
   const resultadoTextoEl = document.getElementById('f2-resultado-texto');
@@ -65,9 +66,14 @@
   // `lineaSerieActual` es la serie de línea previamente creada en ESE
   // gráfico (o null); devuelve la nueva serie de línea (o null) para que
   // el caller la recuerde y la pase de vuelta la próxima vez.
-  function dibujarEnGrafico(graficoDestino, ejemplo, lineaSerieActual) {
+  // `avisoEl` (opcional) es el elemento superpuesto que se muestra cuando
+  // el ejemplo NO tiene línea (canal_invalido / ninguno) para que quede
+  // claro que la ausencia de línea es el punto del ejemplo, no un fallo.
+  function dibujarEnGrafico(graficoDestino, ejemplo, lineaSerieActual, avisoEl) {
     const datos = S.velasATiempo(ejemplo.velas);
     graficoDestino.serie.setData(datos);
+
+    if (avisoEl) avisoEl.hidden = !!ejemplo.linea;
 
     if (lineaSerieActual) {
       graficoDestino.chart.removeSeries(lineaSerieActual);
@@ -107,7 +113,7 @@
 
   function dibujarEjemplo(ejemplo) {
     try {
-      lineaSerie = dibujarEnGrafico(grafico, ejemplo, lineaSerie);
+      lineaSerie = dibujarEnGrafico(grafico, ejemplo, lineaSerie, avisoSinLineaEl);
     } catch (e) {
       // Si falló a mitad de camino, no arrastrar una referencia a una
       // serie que lightweight-charts ya pudo haber descartado: el próximo

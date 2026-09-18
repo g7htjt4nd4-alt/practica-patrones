@@ -33,19 +33,26 @@
   let porPatronCanales = {};
   let porPatronEstrategias = {};
 
-  function renderListaImagenes(contenedor, entradas, carpeta) {
+  function renderListaImagenes(contenedor, entradas, carpeta, patronesSinLinea) {
     contenedor.innerHTML = '';
     entradas.forEach((entrada) => {
       const card = document.createElement('div');
       card.className = 'glosario-card';
+      const badge =
+        patronesSinLinea && patronesSinLinea.has(entrada.patron)
+          ? '<span class="glosario-card-badge">Sin línea (intencional)</span>'
+          : '';
       card.innerHTML = `
         <img src="${carpeta}/${entrada.archivo}" alt="${entrada.titulo}" loading="lazy" />
         <h3>${entrada.titulo}</h3>
+        ${badge}
         <p>${entrada.definicion}</p>
       `;
       contenedor.appendChild(card);
     });
   }
+
+  const PATRONES_CANAL_SIN_LINEA = new Set(['canal_invalido', 'ninguno']);
 
   function claseDireccion(direccion) {
     if (direccion.includes('CALL')) return 'ficha-direccion-call';
@@ -93,7 +100,7 @@
     .then((res) => res.json())
     .then((entradas) => {
       porPatronCanales = Object.fromEntries(entradas.map((e) => [e.patron, e]));
-      renderListaImagenes(listaCanalesEl, entradas, 'data/glosario_fase2');
+      renderListaImagenes(listaCanalesEl, entradas, 'data/glosario_fase2', PATRONES_CANAL_SIN_LINEA);
     })
     .catch((err) => {
       listaCanalesEl.textContent = 'No se pudo cargar el glosario de Canales.';
