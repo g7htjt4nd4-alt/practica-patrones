@@ -546,3 +546,123 @@ body {
   padding: 12px 24px;
   margin-top: 12px;
 }
+
+.btn-opcion.seleccionada {
+  background: #2a3350;
+  border-color: #6d8bff;
+}
+
+.bt-info {
+  background: #161c2c;
+  border: 1px solid #262f47;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: #d5d9e6;
+  line-height: 1.5;
+}
+
+.bt-prob-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.bt-prob-card {
+  background: #161c2c;
+  border: 1px solid #262f47;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.bt-prob-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.bt-prob-aviso {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7a8299;
+  font-style: italic;
+}
+
+.bt-prob-barra {
+  display: flex;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #1e2538;
+}
+
+.bt-prob-segmento {
+  height: 100%;
+}
+
+.bt-prob-gana {
+  background: #2f9e5f;
+}
+
+.bt-prob-pierde {
+  background: #e5534b;
+}
+
+.bt-prob-neutral {
+  background: #7a8299;
+}
+
+.bt-prob-leyenda {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+}
+
+.bt-leyenda-gana {
+  color: #4fd88a;
+}
+
+.bt-leyenda-pierde {
+  color: #f0748a;
+}
+
+.bt-leyenda-neutral {
+  color: #b8bfd1;
+}
+
+.bt-prob-movimiento {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #d5d9e6;
+}
+
+.bt-prob-confiabilidad {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid #262f47;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f5c542;
+}
+
+.bt-separador {
+  border: none;
+  border-top: 1px solid #262f47;
+  margin: 28px 0;
+}
+
+.bt-caso-meta {
+  text-align: center;
+  color: #7a8299;
+  font-size: 0.82rem;
+  margin: 8px 0 20px;
+}
+
+.bt-subpregunta {
+  font-size: 0.9rem;
+  color: #d5d9e6;
+  margin: 18px 0 8px;
+}
+
+.opciones-prediccion {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}

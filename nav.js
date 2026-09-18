@@ -10,6 +10,7 @@
     estrategias: document.getElementById('tab-estrategias'),
     velocidad: document.getElementById('tab-velocidad'),
     glosario: document.getElementById('tab-glosario'),
+    backtesting: document.getElementById('tab-backtesting'),
   };
   const activadores = {
     velas: () => window.Fase1.activar(),
@@ -17,6 +18,7 @@
     estrategias: () => window.Fase3.activar(),
     velocidad: () => window.Fase4.activar(),
     glosario: () => window.Glosario.activar(),
+    backtesting: () => window.Backtesting.activar(),
   };
 
   function mostrarTab(nombre) {

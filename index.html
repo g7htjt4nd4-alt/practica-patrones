@@ -16,6 +16,7 @@
       <button type="button" class="tab-btn" data-tab="estrategias">Estrategias</button>
       <button type="button" class="tab-btn" data-tab="velocidad">Velocidad</button>
       <button type="button" class="tab-btn" data-tab="glosario">Glosario</button>
+      <button type="button" class="tab-btn" data-tab="backtesting">Backtesting</button>
     </nav>
   </header>
 
@@ -195,6 +196,47 @@
     </div>
   </div>
 
+  <section id="tab-backtesting" class="tab-panel" hidden>
+    <div class="fase-subheader">
+      <h2>Backtesting</h2>
+      <span id="bt-stats">Estrategia: 0/0 · Predicción: 0/0</span>
+      <button id="bt-btn-reset" class="btn btn-secundario">Reiniciar progreso</button>
+    </div>
+    <div class="main">
+      <p class="bt-info">
+        Basado en datos reales de SPY/QQQ (velas de 30 min, últimos 60 días —
+        el máximo gratis de Yahoo Finance). Es un punto de partida para
+        calibrar el criterio, no una prueba estadística sólida: las muestras
+        son chicas, léelas con esa cautela.
+      </p>
+
+      <div id="bt-probabilidades" class="bt-prob-grid"></div>
+
+      <hr class="bt-separador" />
+
+      <p class="pregunta">Caso real: ¿qué estrategia aplica, y creés que ganó o perdió?</p>
+
+      <div class="chart-wrap">
+        <div id="bt-chart" class="chart"></div>
+      </div>
+      <p id="bt-caso-meta" class="bt-caso-meta"></p>
+
+      <p class="bt-subpregunta">¿Qué estrategia aplica?</p>
+      <div id="bt-opciones-estrategia" class="opciones"></div>
+
+      <p class="bt-subpregunta">¿Ganó o perdió?</p>
+      <div id="bt-opciones-prediccion" class="opciones opciones-prediccion"></div>
+
+      <button id="bt-btn-revelar" class="btn btn-primario" disabled>Revelar resultado</button>
+
+      <div id="bt-resultado" class="resultado" hidden>
+        <p id="bt-resultado-texto" class="resultado-texto"></p>
+        <p id="bt-resultado-detalle" class="explicacion"></p>
+        <button id="bt-btn-siguiente" class="btn btn-primario">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
   <script src="shared.js"></script>
   <script src="glosario.js"></script>
@@ -202,6 +244,7 @@
   <script src="fase2.js"></script>
   <script src="fase3.js"></script>
   <script src="fase4.js"></script>
+  <script src="backtesting.js"></script>
   <script src="nav.js"></script>
 </body>
 </html>
