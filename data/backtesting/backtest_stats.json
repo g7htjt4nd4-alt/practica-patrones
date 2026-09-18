@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-18T18:12:33.376540-04:00",
+  "generado": "2026-09-18T18:28:10.878806-04:00",
   "periodo_datos": "60d",
   "tickers": [
     "SPY",
@@ -38,12 +38,12 @@
       "confiabilidad": "moderada (sigue siendo un período corto)"
     },
     "Falso_Gap": {
-      "n": 108,
+      "n": 35,
       "direccion": "PUT",
-      "pct_gana": 38.0,
-      "pct_pierde": 41.7,
-      "pct_neutral": 20.4,
-      "movimiento_promedio_pct": 0.08,
+      "pct_gana": 40.0,
+      "pct_pierde": 37.1,
+      "pct_neutral": 22.9,
+      "movimiento_promedio_pct": -0.02,
       "confiabilidad": "moderada (sigue siendo un período corto)"
     }
   }

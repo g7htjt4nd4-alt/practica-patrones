@@ -253,7 +253,10 @@ def detectar_v10_roja(df, i):
 
 def detectar_falso_gap(df, i):
     # busca, dentro del mismo día, si hubo una V10 verde y la barra actual
-    # (posterior, roja) rompe el piso (low) de esa V10
+    # (posterior, roja) rompe el piso (low) de esa V10. Solo cuenta la
+    # PRIMERA barra que rompe ese piso ese día -- sin este resguardo, cada
+    # barra subsiguiente que sigue cerrando por debajo también calificaba,
+    # contando el mismo quiebre varias veces (hasta 8 en un día).
     dia = df["fecha_dia"].iloc[i]
     del_dia = df[df["fecha_dia"] == dia]
     v10s = del_dia[del_dia["bloque"] == "V10"]
@@ -267,7 +270,12 @@ def detectar_falso_gap(df, i):
         return False
     roja = df["c"].iloc[i] < df["o"].iloc[i]
     rompe_piso = df["c"].iloc[i] < v10["l"]
-    return roja and rompe_piso
+    if not (roja and rompe_piso):
+        return False
+    # la barra anterior debe seguir sobre el piso (o ser la propia V10):
+    # así solo se detecta la primera ruptura, no las que la siguen.
+    anterior_sobre_piso = df["c"].iloc[i - 1] >= v10["l"]
+    return anterior_sobre_piso
 
 
 def evaluar_resultado(df, i, direccion):
