@@ -1,9 +1,9 @@
 {
-  "generado": "2026-09-18T18:33:12.462677-04:00",
+  "generado": "2026-09-18T18:43:06.316965-04:00",
   "fuentes": {
-    "VV11": "30min (60d)",
-    "V10_roja": "30min (60d)",
-    "Falso_Gap": "30min (60d)",
+    "VV11": "30min (60d, acumulado entre corridas)",
+    "V10_roja": "30min (60d, acumulado entre corridas)",
+    "Falso_Gap": "30min (60d, acumulado entre corridas)",
     "SMA_hora": "1h (730d)",
     "SMA_dia": "diario (5y) + 1h para confirmación"
   },
@@ -22,11 +22,11 @@
       "confiabilidad": "baja (n<20, orientativo, no concluyente)"
     },
     "SMA_hora": {
-      "n": 117,
+      "n": 116,
       "direccion": "CALL",
-      "pct_gana": 37.6,
-      "pct_pierde": 35.0,
-      "pct_neutral": 27.4,
+      "pct_gana": 37.9,
+      "pct_pierde": 34.5,
+      "pct_neutral": 27.6,
       "movimiento_promedio_pct": -0.09,
       "confiabilidad": "moderada (sigue siendo un período relativamente corto)"
     },
