@@ -59,6 +59,21 @@ window.PatronesShared = (function () {
     return copia;
   }
 
+  // Mazo con la mecánica "no repetir hasta agotar, luego rebarajar" usada
+  // por las 4 fases. Antes cada fase reimplementaba esto por su cuenta;
+  // se unifica acá para que las 3 copias no puedan divergir entre sí.
+  function crearMazo() {
+    let indices = [];
+    return {
+      siguienteIndice(totalEjemplos) {
+        if (indices.length === 0) {
+          indices = barajar(Array.from({ length: totalEjemplos }, (_, i) => i));
+        }
+        return indices.pop();
+      },
+    };
+  }
+
   function cargarProgreso(storageKey) {
     try {
       const guardado = JSON.parse(localStorage.getItem(storageKey));
@@ -121,6 +136,7 @@ window.PatronesShared = (function () {
     crearGraficoVelas,
     velasATiempo,
     barajar,
+    crearMazo,
     cargarProgreso,
     guardarProgreso,
     registrarIntento,

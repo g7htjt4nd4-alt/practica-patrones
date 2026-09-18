@@ -29,7 +29,7 @@
   const explicacionEl = document.getElementById('f3-explicacion');
   const btnSiguiente = document.getElementById('f3-btn-siguiente');
 
-  let mazo = [];
+  const mazo = S.crearMazo();
   let ejemplos = [];
   let actual = null;
   let progreso = S.cargarProgreso(STORAGE_KEY);
@@ -40,12 +40,15 @@
   }
 
   function siguienteEjemplo() {
-    if (mazo.length === 0) {
-      mazo = S.barajar(ejemplos.map((_, idx) => idx));
-    }
-    const idx = mazo.pop();
+    const idx = mazo.siguienteIndice(ejemplos.length);
     actual = ejemplos[idx];
-    dibujarEjemplo(actual);
+    // Mismo resguardo que en Fase 1/2: un fallo al dibujar no debe impedir
+    // que las opciones se actualicen a la pregunta nueva.
+    try {
+      dibujarEjemplo(actual);
+    } catch (e) {
+      console.error('Error dibujando el ejemplo (se continúa igual):', e);
+    }
     renderOpciones(actual);
     resultadoEl.hidden = true;
   }

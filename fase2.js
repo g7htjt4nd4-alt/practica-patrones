@@ -24,7 +24,7 @@
   const explicacionEl = document.getElementById('f2-explicacion');
   const btnSiguiente = document.getElementById('f2-btn-siguiente');
 
-  let mazo = [];
+  const mazo = S.crearMazo();
   let ejemplos = [];
   let actual = null;
   let progreso = S.cargarProgreso(STORAGE_KEY);
@@ -37,12 +37,16 @@
   }
 
   function siguienteEjemplo() {
-    if (mazo.length === 0) {
-      mazo = S.barajar(ejemplos.map((_, idx) => idx));
-    }
-    const idx = mazo.pop();
+    const idx = mazo.siguienteIndice(ejemplos.length);
     actual = ejemplos[idx];
-    dibujarEjemplo(actual);
+    // Si el gráfico falla al dibujar (ej. una excepción intermitente de
+    // lightweight-charts), igual debe avanzar la pregunta: que un problema
+    // visual no deje la pantalla congelada en el ejemplo anterior.
+    try {
+      dibujarEjemplo(actual);
+    } catch (e) {
+      console.error('Error dibujando el gráfico (se continúa igual):', e);
+    }
     renderOpciones(actual);
     resultadoEl.hidden = true;
   }
@@ -101,7 +105,15 @@
   }
 
   function dibujarEjemplo(ejemplo) {
-    lineaSerie = dibujarEnGrafico(grafico, ejemplo, lineaSerie);
+    try {
+      lineaSerie = dibujarEnGrafico(grafico, ejemplo, lineaSerie);
+    } catch (e) {
+      // Si falló a mitad de camino, no arrastrar una referencia a una
+      // serie que lightweight-charts ya pudo haber descartado: el próximo
+      // intento debe partir limpio en vez de fallar dos veces seguidas.
+      lineaSerie = null;
+      throw e;
+    }
   }
 
   function renderOpciones(ejemplo) {

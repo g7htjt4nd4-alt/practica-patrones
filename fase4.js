@@ -132,7 +132,14 @@
     resultadoEl.hidden = true;
     actualizarProgreso();
     const item = rondaActiva[indiceActual];
-    renderPreguntaVisual(item);
+    // Igual que en las otras fases: un fallo dibujando la vela/gráfico no
+    // debe congelar la ronda (el cronómetro tiene que arrancar igual).
+    try {
+      renderPreguntaVisual(item);
+    } catch (e) {
+      lineaSerieActual = null;
+      console.error('Error dibujando la pregunta (se continúa igual):', e);
+    }
     renderOpciones(item);
     iniciarCronometro();
   }
